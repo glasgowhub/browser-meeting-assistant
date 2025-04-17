@@ -19,7 +19,7 @@ export default function App() {
   const [todos, setTodos] = useState<string[]>([]);
   const [suggestions, setSug] = useState<string[]>([]);
 
-  const stt = useRef<SttSocket | undefined | null>(null);
+  const stt = useRef<SttSocket | null>(null);
   const stopMicRef = useRef<() => void>(() => {});
 
   const mediaRec = useRef<MediaRecorder | null>(null);
