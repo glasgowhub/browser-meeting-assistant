@@ -19,13 +19,13 @@ export default function App() {
   const [todos, setTodos] = useState<string[]>([]);
   const [suggestions, setSug] = useState<string[]>([]);
 
-  const stt = useRef<SttSocket>();
-  const stopMicRef = useRef<() => void>();
+  const stt = useRef<SttSocket | null>(null);
+  const stopMicRef = useRef<() => void>(() => {});
 
-  const mediaRec = useRef<MediaRecorder>();
+  const mediaRec = useRef<MediaRecorder | null>(null);
   const chunks = useRef<Blob[]>([]);
   const sentences = useRef<{ t: number; text: string }[]>([]);
-  const startEpoch = useRef<number>(0);
+  const startEpoch = useRef(0);
 
   /* ---------- START ---------- */
   const start = () => {

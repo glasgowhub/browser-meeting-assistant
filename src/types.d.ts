@@ -1,0 +1,1 @@
+echo "declare module 'audiobuffer-to-wav';"

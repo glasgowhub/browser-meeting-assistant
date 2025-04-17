@@ -13,7 +13,7 @@ let lastVector: Uint32Array | null = null;
 
 export async function maybeSummarise(delta: string) {
   history += ' ' + delta;
-  const vec = encode(delta);
+  const vec = enc.encode(delta);
 
   if (lastVector) {
     // cheap Jaccard similarity between sparse token IDs
