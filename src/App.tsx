@@ -44,7 +44,7 @@ export default function App() {
         }
       }
     });
-    stt.current.connect();
+    stt.current?.connect();
 
     startMic((buf) => stt.current!.send(buf)).then(
       (stop) => (stopMicRef.current = stop),
@@ -64,7 +64,8 @@ export default function App() {
   const stop = async () => {
     // Mikro & STT beenden
     stopMicRef.current?.();
-    stt.current = undefined;
+    stt.current = null;
+
 
     /* Aufnahme stoppen & fertiges WEBM abholen */
     await new Promise<void>((res) => {
