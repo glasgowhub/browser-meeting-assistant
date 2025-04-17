@@ -2,7 +2,7 @@
 import { saveAs } from 'file-saver';
 
 export function downloadBlob(blob: Blob, filename: string) {
-  saveAs(blob, filename);                       // löst Browser‑Download aus
+  saveAs(blob, filename);
 }
 
 /* ---------- Markdown ---------- */
@@ -24,7 +24,7 @@ export function makeMarkdown(
     '',
     '## Open To‑Dos',
     ...todos.map((t) => `- [ ] ${t}`),
-  ].join("\n");                                // <‑‑ EIN Zeilen‑String, kein Umbruch
+  ].join('\n');
   return new Blob([body], { type: 'text/markdown' });
 }
 
@@ -33,15 +33,14 @@ export function makeSRT(
   transcript: { start: number; end: number; text: string }[],
 ) {
   const lines = transcript
-    .map((l, i) =>
-      [
-        i + 1,
-        `${fmtSRT(l.start)} --> ${fmtSRT(l.end)}`,
-        l.text,
-        '',
-      ].join('\n'),
+    .map(
+      (l, i) => `${i + 1}
+${fmtSRT(l.start)} --> ${fmtSRT(l.end)}
+${l.text}
+
+`,
     )
-    .join("\n");
+    .join('\n');
   return new Blob([lines], { type: 'text/plain' });
 }
 
@@ -49,13 +48,17 @@ export function makeSRT(
 export function makeVTT(
   transcript: { start: number; end: number; text: string }[],
 ) {
-  const header = 'WEBVTT\n\n';
+  const header = `WEBVTT
+
+`;
   const body = transcript
     .map(
-      (l) =>
-        `${fmtSRT(l.start)} --> ${fmtSRT(l.end)}\n${l.text}\n`,
+      (l) => `${fmtSRT(l.start)} --> ${fmtSRT(l.end)}
+${l.text}
+
+`,
     )
-    .join("\n");
+    .join('\n');
   return new Blob([header + body], { type: 'text/vtt' });
 }
 
