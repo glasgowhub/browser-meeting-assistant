@@ -2,7 +2,10 @@ import OpenAI from 'openai';
 import { encoding_for_model } from 'tiktoken';
 const enc = await encoding_for_model('gpt-4o-mini');
 
-const openai = new OpenAI();
+const openai = new OpenAI({
+  apiKey: import.meta.env.VITE_OPENAI_API_KEY,   //  ← Key direkt übergeben
+  dangerouslyAllowBrowser: true,                 //  ← nötig im Front‑End
+});
 
 // running state kept outside fn
 let history = '';

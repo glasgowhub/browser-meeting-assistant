@@ -9,7 +9,7 @@ import {
   makeSRT,
   makeVTT,
 } from './lib/exports';
-import audioBufferToWav from 'audio-buffer-to-wav';
+import audioBufferToWav from 'audiobuffer-to-wav';
 
 const mediaType = { mimeType: 'audio/webm;codecs=opus' } as MediaRecorderOptions;
 
