@@ -8794,7 +8794,7 @@ Error generating stack: ` + n.message + `
         let x = s.addQueryPrefix === true ? "?" : "";
         return s.charsetSentinel && (s.charset === "iso-8859-1" ? x += "utf8=%26%2310003%3B&" : x += "utf8=%E2%9C%93&"), R.length > 0 ? x + R : "";
       }
-      const ml = "4.95.0";
+      const ml = "4.95.1";
       let wp = false, Ci, Pp, Ip, Ro, ty, ey, ny, ay, ly;
       function av(c, l = {
         auto: false
@@ -12653,7 +12653,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
       nt.Responses = hf;
       nt.Evals = Yi;
       nt.EvalListResponsesPage = tf;
-      const tb = "/assets/tiktoken_bg-CXmsxE9H.wasm", eb = async (c = {}, l) => {
+      const tb = "/browser-meeting-assistant/assets/tiktoken_bg-CXmsxE9H.wasm", eb = async (c = {}, l) => {
         let u;
         if (l.startsWith("data:")) {
           const s = l.replace(/^data:.*?base64,/, "");
