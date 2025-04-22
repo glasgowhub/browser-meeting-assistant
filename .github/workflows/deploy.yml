@@ -11,8 +11,7 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-     env:                         
-      VITE_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }
+     env: VITE_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }
     steps:
       - uses: actions/checkout@v3
 
