@@ -12998,7 +12998,10 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
           },
           body: c
         });
-        if (!l.ok) throw new Error(await l.text());
+        if (!l.ok) {
+          const u = await l.text();
+          throw new Error(`Diarisation API failed ${l.status}: ${u}`);
+        }
         return await l.json();
       }
       var Es = {
