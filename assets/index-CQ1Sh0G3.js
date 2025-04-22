@@ -12990,7 +12990,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         return JSON.parse(s.choices[0].message.content);
       }
       async function Xb(c) {
-        const l = await fetch("https://api-inference.huggingface.co/models/pyannote/speaker-diarization@2024.10", {
+        const l = await fetch("https://api-inference.huggingface.co/models/pyannote/speaker-diarization", {
           method: "POST",
           headers: {
             Authorization: "Bearer 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",
