@@ -1,6 +1,6 @@
 export async function diarise(wav: Blob) {
     const res = await fetch(
-      'https://api-inference.huggingface.co/models/pyannote/speaker-diarization@2024.10',
+      'https://api-inference.huggingface.co/models/pyannote/speaker-diarization', 
       {
         method: 'POST',
         headers: {
