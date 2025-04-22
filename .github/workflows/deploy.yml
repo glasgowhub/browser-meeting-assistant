@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     env:                            # ← add this block
       VITE_OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      VITE_HF_API_KEY:     ${{ secrets.HF_API_KEY }}
     steps:
       - uses: actions/checkout@v3
 
