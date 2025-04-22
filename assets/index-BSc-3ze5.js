@@ -12993,7 +12993,7 @@ https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety
         const l = await fetch("https://api-inference.huggingface.co/models/pyannote/speaker-diarization", {
           method: "POST",
           headers: {
-            Authorization: "Bearer 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",
+            Authorization: "Bearer VHsiqxUCoowMHWMMnuVefQotIkfebZBhbr",
             "Content-Type": "audio/wav"
           },
           body: c
